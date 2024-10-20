@@ -3,11 +3,12 @@
     <!-- Header -->
     <div class="flex items-center justify-center bg-white shadow-sm min-h-12 portrait:hidden landscape:flex">
       <h1 class="text-xl font-medium text-sky-800 font-poppins">SoundSync</h1>
-      <RouterLink :to="{ name: 'edit' }"
-        class="fixed top-0 left-0 flex items-center justify-end gap-0 right-[5%] min-h-12">
+      <div class="fixed top-0 left-0 flex items-center justify-end gap-0 right-[5%] min-h-12">
         <!-- <v-icon name="md-keyboardarrowleft-round" scale="2.5" color="#07a2f0" /> -->
-        <p class="text-lg font-medium text-sky-500 font-poppins">Editar</p>
-      </RouterLink>
+         <RouterLink :to="{ name: 'edit' }">
+           <p class="text-lg font-medium text-sky-500 font-poppins">Editar</p>
+          </RouterLink>
+      </div>
     </div>
 
     <!-- Rotate your phone -->
