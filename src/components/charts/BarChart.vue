@@ -6,17 +6,25 @@
 
 <script lang="ts" setup>
 import { reactive } from 'vue'
+import { defineProps } from 'vue';
 // Chart imports
 import { Bar } from 'vue-chartjs'
 import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
 ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
 
+const props = defineProps({
+    data:{
+      type:Array,
+      required:true,
+    }
+})
+
 const chartData = reactive({
   labels: ['Jos', 'Vale', 'Ilse', 'Isaac', 'Ana', 'Sara', 'Lucein', 'Paty', 'Isvy', 'Ami', 'Alma', 'Ale/Agus', 'Max'],
   datasets: [{
-    label: 'SoundSync Data',
+    label: 'Sound Level',
     backgroundColor: [
-      '#FFB3BA', // Rosa suave
+      '#ff867d', // Rosa suave
       '#FFDFBA', // Naranja pastel
       '#FFFFBA', // Amarillo pastel
       '#BAFFC9', // Verde menta
@@ -28,9 +36,9 @@ const chartData = reactive({
       '#FFF9C4', // Amarillo claro
       '#FFCCBC', // Naranja claro
       '#E1BEE7', // Lila claro
-      '#B3E5FC'  // Azul cielo claro
+      '#028df0'  // Azul cielo claro
     ],
-    data: [30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 100]
+    data: props.data
   }]
 })
 
@@ -42,7 +50,7 @@ const chartOptions = reactive({
       ticks: {
         font: {
           size: 13, // Cambia el tamaño de la fuente de las etiquetas del eje X
-          family: 'Sans-Serif', // Cambia la fuente
+          family: 'Poppins', // Cambia la fuente
           weight: 'bold' // Estilo de la fuente (opcional)
         }
       }
@@ -51,7 +59,7 @@ const chartOptions = reactive({
       ticks: {
         font: {
           size: 11, // Cambia el tamaño de la fuente de las etiquetas del eje Y
-          family: 'Arial',
+          family: 'Poppins',
           weight: 'bold'
         }
       }
@@ -61,8 +69,8 @@ const chartOptions = reactive({
     legend: {
       labels: {
         font: {
-          size: 11, // Cambia el tamaño de la fuente del legend (leyenda)
-          family: 'Arial',
+          size: 0, // Cambia el tamaño de la fuente del legend (leyenda)
+            family: 'Poppins',
           weight: 'bold'
         }
       }
