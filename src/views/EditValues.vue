@@ -56,36 +56,36 @@
                 <div class="flex flex-col items-center gap-3 p-4 bg-white rounded-lg shadow-lg">
                     <p class="bg-[#3f51b5] rounded-lg text-white font-poppins font-semibold px-3">{{ rangeLucein }}%</p>
                     <input class="h-2" type="range" v-model="rangeLucein" id="rangeLucein">
-                    <span class="px-4 text-white font-semibold font-poppins bg-[#3f51b5] rounded-full">Lucein</span>
-                    <img class="w-20 h-20" src="../assets/img/trompeta.png" alt="">
+                    <span class="px-4 text-white font-semibold font-poppins bg-[#3f51b5] rounded-full">Luzein</span>
+                    <img class="w-16 h-14" src="../assets/img/trompeta.png" alt="">
                 </div>
                 <!-- Paty -->
                 <div class="flex flex-col items-center gap-3 p-4 bg-white rounded-lg shadow-lg">
                     <p class="bg-[#e91e63] rounded-lg text-white font-poppins font-semibold px-3">{{ rangePaty }}%</p>
                     <input class="h-2" type="range" v-model="rangePaty" id="rangePaty">
                     <span class="px-4 text-white font-semibold font-poppins bg-[#e91e63] rounded-full">Paty</span>
-                    <img class="w-20 h-20" src="../assets/img/trompeta.png" alt="">
+                    <img class="w-16 h-14" src="../assets/img/trompeta.png" alt="">
                 </div>
                 <!-- Isvy -->
                 <div class="flex flex-col items-center gap-3 p-4 bg-white rounded-lg shadow-lg">
                     <p class="bg-[#8bc34a] rounded-lg text-white font-poppins font-semibold px-3">{{ rangeIsvy }}%</p>
                     <input class="h-2" type="range" v-model="rangeIsvy" id="rangeIsvy">
                     <span class="px-4 text-white font-semibold font-poppins bg-[#8bc34a] rounded-full">Isvy</span>
-                    <img class="w-20 h-20" src="../assets/img/microfono.png" alt="">
+                    <img class="w-10 h-10" src="../assets/img/microfono.png" alt="">
                 </div>
                 <!-- Ami -->
                 <div class="flex flex-col items-center gap-3 p-4 bg-white rounded-lg shadow-lg">
                     <p class="bg-[#ffab2e] rounded-lg text-white font-poppins font-semibold px-3">{{ rangeAmi }}%</p>
                     <input class="h-2" type="range" v-model="rangeAmi" id="rangeAmi">
                     <span class="px-4 text-white font-semibold font-poppins bg-[#ffab2e] rounded-full">Ami</span>
-                    <img class="w-20 h-20" src="../assets/img/microfono.png" alt="">
+                    <img class="w-10 h-10" src="../assets/img/microfono.png" alt="">
                 </div>
                 <!-- Alma -->
                 <div class="flex flex-col items-center gap-3 p-4 bg-white rounded-lg shadow-lg">
                     <p class="bg-[#f44336] rounded-lg text-white font-poppins font-semibold px-3">{{ rangeAlma }}%</p>
                     <input class="h-2" type="range" v-model="rangeAlma" id="rangeAlma">
                     <span class="px-4 text-white font-semibold font-poppins bg-[#f44336] rounded-full">Alma</span>
-                    <img class="w-20 h-20" src="../assets/img/microfono.png" alt="">
+                    <img class="w-10 h-10" src="../assets/img/microfono.png" alt="">
                 </div>
                 <!-- Ale/Agus -->
                 <div class="flex flex-col items-center gap-3 p-4 bg-white rounded-lg shadow-lg">
@@ -95,7 +95,8 @@
                     <img class="w-20 h-20" src="../assets/img/drums.png" alt="">
                 </div>
             </div>
-            <button @click="saveValues" class="p-2 text-xl text-white rounded-lg bg-sky-700 font-poppins">Guardar</button>
+            <!-- <button @click="saveValues" class="p-2 text-xl text-white rounded-lg bg-sky-700 hover:bg-sky-800 active:scale-95 font-poppins">Guardar</button> -->
+             <ButtonSave @click="saveValues"/>
         </div>
     </section>
 </template>
@@ -122,6 +123,7 @@ import { toast } from "vue3-toastify";
 import "vue3-toastify/dist/index.css";
 
 import { collection, doc, getDoc, getFirestore, onSnapshot, updateDoc } from "firebase/firestore";
+import ButtonSave from '@/components/buttons/ButtonSave.vue';
 
 const db = getFirestore();
 const myCollectionRef = collection(db, "myCollection");

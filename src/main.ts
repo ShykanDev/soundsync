@@ -9,9 +9,9 @@ import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 const pinia = createPinia()
 // oh vue icons
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { FaFlag, RiZhihuFill,MdKeyboardarrowleftRound } from "oh-vue-icons/icons";
+import { FaFlag, RiZhihuFill,MdKeyboardarrowleftRound,GiSettingsKnobs,IoPhoneLandscapeOutline } from "oh-vue-icons/icons";
+addIcons(FaFlag, RiZhihuFill,MdKeyboardarrowleftRound,GiSettingsKnobs,IoPhoneLandscapeOutline);
 
-addIcons(FaFlag, RiZhihuFill,MdKeyboardarrowleftRound);
 
 // Firestore
 // Import the functions you need from the SDKs you need
@@ -36,12 +36,16 @@ export {db};
 import Vue3Toastify, { type ToastContainerOptions } from 'vue3-toastify';
 import 'vue3-toastify/dist/index.css'; 
 
+
 const appVue = createApp(App)
 appVue.use(Vue3Toastify, {
   autoClose: 3000,
 },)
 appVue.use(router)
 appVue.use(pinia)
+
+
+
 pinia.use(piniaPluginPersistedstate)
 appVue.component("v-icon", OhVueIcon)
 appVue.mount('#app')
