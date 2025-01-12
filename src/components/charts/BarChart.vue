@@ -20,7 +20,7 @@ const props = defineProps({
 })
 
 const chartData = reactive({
-  labels: ['Jos', 'Vale', 'Ilse', 'Isaac', 'Ana', 'Sara', 'Luzein', 'Paty', 'Isvy', 'Ami', 'Alma', 'Ale/Agus', 'Max'],
+  labels: ['Jos', 'Vale', 'Ilse', 'Isaac', 'Ana', 'Sara', 'Luzein', 'Paty', 'Isvy', 'Amy', 'Alma', 'Ale/Agus', '♫'],
   datasets: [{
     label: 'Sound Level',
     backgroundColor: [
@@ -36,7 +36,7 @@ const chartData = reactive({
     '#ffab2e', // Ami - Naranja claro
     '#f44336', // Alma - Rojo intenso
     '#9c27b0', // Ale/Agus - Púrpura
-    '#028df0'  // Max - Azul (ignorar este color)
+    'rgba(0,0,0,0)'  // Max - Azul (ignorar este color)
     ],
     data: props.data
   }]

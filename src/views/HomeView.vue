@@ -24,13 +24,20 @@
       <!-- Adding the key here to force chart re-render -->
       <BarChart ref="barChart" class="min-h-56" :data="rangeValues" :key="chartKey"></BarChart>
     </section>
+
+    <h2 class="text-xl my-5 font-medium text-sky-950 font font-poppins ">Notas</h2>
+    <section v-if="notesArr" class="flex flex-wrap justify-center space-x-5 px-2 space-y-3 max-h-96 overflow-y-auto">
+      <NotificationCard v-for="note in notesArr.sort((a, b) => b.date - a.date)" :key="note" class="animate-fade-up " :class="{'border-[1px] border-sky-700 animate-shake animate-delay-500' : notesArr[0] == note}" :message="note.note" :date="note.date"/>
+    </section>
+    <h3 class="font-poppins text-slate-600 text-sm">Las notas se eliminarán en 24 horas</h3>
   </div>
 </template>
 
 <script lang="ts" setup>
 import BarChart from '@/components/charts/BarChart.vue';
-import { ref } from 'vue';
+import { onUnmounted, ref } from 'vue';
 import { collection, getFirestore, onSnapshot } from "firebase/firestore";
+import NotificationCard from '@/components/NotificationCard.vue';
 
 // Reactive variables
 let rangeValues = ref<number[]>([]);     // Holds the data array for the chart
@@ -49,16 +56,29 @@ const unsubscribe = onSnapshot(myCollectionRef, (snapshot) => {
   snapshot.docChanges().forEach((change) => {
     if (change.type === "modified" || change.type === "added") {
       const data = change.doc.data();
-      console.log("New document: ", data.numeros); // Log the received array
       let arrayNumeros = data.numeros;
       arrayNumeros.push(100);  // Example of data manipulation
       rangeValues.value = arrayNumeros;
-
+      
       // Force chart re-render by updating the key
       updateChartKey();
     }
   });
 });
+const notesArr = ref(); // Almacena las notas
+
+const notesRef = collection(db, 'notes');
+
+// Escucha los cambios en tiempo real
+const unsubscribeNotes = onSnapshot(notesRef, (snapshot) => {
+  // Limpia el array para evitar duplicados
+  notesArr.value = snapshot.docs.map((doc) => doc.data());
+});
+
+onUnmounted(() => {
+  unsubscribe();
+  unsubscribeNotes();
+})
 </script>
 
 <style scoped></style>

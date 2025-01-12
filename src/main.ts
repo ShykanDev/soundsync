@@ -9,8 +9,8 @@ import piniaPluginPersistedstate from 'pinia-plugin-persistedstate'
 const pinia = createPinia()
 // oh vue icons
 import { OhVueIcon, addIcons } from "oh-vue-icons";
-import { FaFlag, RiZhihuFill,MdKeyboardarrowleftRound,GiSettingsKnobs,IoPhoneLandscapeOutline } from "oh-vue-icons/icons";
-addIcons(FaFlag, RiZhihuFill,MdKeyboardarrowleftRound,GiSettingsKnobs,IoPhoneLandscapeOutline);
+import { FaFlag, RiZhihuFill,MdKeyboardarrowleftRound,GiSettingsKnobs,IoPhoneLandscapeOutline, RiLoader5Line  } from "oh-vue-icons/icons";
+addIcons(FaFlag, RiZhihuFill,MdKeyboardarrowleftRound,GiSettingsKnobs,IoPhoneLandscapeOutline, RiLoader5Line );
 
 
 // Firestore

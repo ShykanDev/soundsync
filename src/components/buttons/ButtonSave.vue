@@ -1,6 +1,6 @@
 <template>
     <div class="">
-<button class="shadow-sm btn font-poppins" role="button">Guardar Cambios</button>
+<button class="shadow-sm font-poppins bg-sky-800 text-white hover:bg-sky-900 focus:shadow-outline focus:outline-none font-bold py-2 px-4 rounded" role="button">Guardar Cambios</button>
 
     </div>
 </template>
