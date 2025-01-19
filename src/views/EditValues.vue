@@ -1,8 +1,9 @@
 <template>
-    <section class="animate-fade-left">
-        <v-icon v-show="loading" name="ri-loader-5-line" scale="1.8"  class="animate-spin text-sky-600 fixed top-2 right-3"   />
-        <RouterLink :to="{name: 'home'}" class="flex  items-center bg-white rounded-bl-lg rounded-br-lg shadow-sm min-h-11">
-            <div class="flex items-center bg-white gap-0">
+    <section class="overflow-hidden animate-fade-left">
+
+        <v-icon v-show="loading" name="ri-loader-5-line" scale="1.8"  class="fixed animate-spin text-sky-600 top-2 right-3"   />
+        <RouterLink :to="{name: 'home'}" class="flex items-center bg-white rounded-bl-lg rounded-br-lg shadow-sm min-h-11">
+            <div class="flex items-center gap-0 bg-white">
                 <v-icon name="md-keyboardarrowleft-round" scale="2.5" color="#07a2f0" />
                 <p class="text-lg font-medium text-sky-500 font-poppins">Regresar</p>
             </div>
@@ -13,108 +14,111 @@
             <div class="flex flex-wrap w-full mt-8 justify-evenly gap-11">
                 <!-- Jos -->
                 <div class="flex flex-col items-center bg-white gap-3 p-4 bg-wh8te rounded-lg shadow-lg hover:scale-105 transition-transform ease-in hover:border-[1px] border-sky-700">
-                    <p class="bg-sky-800 rounded-lg text-white font-poppins font-semibold px-3">{{ rangeJos }}%</p>
+                    <p class="px-3 font-semibold text-white rounded-lg bg-sky-800 font-poppins">{{ rangeJos }}%</p>
                     <input class="h-2" type="range" v-model="rangeJos" id="rangeJos">
-                    <span class="px-4 text-white font-semibold font-poppins bg-sky-700 rounded-full">Jos</span>
+                    <span class="px-4 font-semibold text-white rounded-full font-poppins bg-sky-700">Jos</span>
                     <img class="w-16 h-14" src="../assets/img/keboard.png" alt="">
                 </div>
                 <!-- Vale -->
                 <div class="flex flex-col items-center bg-white gap-3 p-4 bg-wh8te rounded-lg shadow-lg hover:scale-105 transition-transform ease-in hover:border-[1px] border-sky-700">
-                    <p class="bg-sky-800 rounded-lg text-white font-poppins font-semibold px-3">{{ rangeVale }}%</p>
+                    <p class="px-3 font-semibold text-white rounded-lg bg-sky-800 font-poppins">{{ rangeVale }}%</p>
                     <input class="h-2" type="range" v-model="rangeVale" id="rangeVale">
-                    <span class="px-4 text-white font-semibold font-poppins bg-sky-700 rounded-full">Vale</span>
+                    <span class="px-4 font-semibold text-white rounded-full font-poppins bg-sky-700">Vale</span>
                     <img class="w-20 h-20" src="../assets/img/volin.png" alt="">
                 </div>
                 <!-- Ilse -->
                 <div class="flex flex-col items-center bg-white gap-3 p-4 bg-wh8te rounded-lg shadow-lg hover:scale-105 transition-transform ease-in hover:border-[1px] border-sky-700">
-                    <p class="bg-sky-800 rounded-lg text-white font-poppins font-semibold px-3">{{ rangeIlse }}%</p>
+                    <p class="px-3 font-semibold text-white rounded-lg bg-sky-800 font-poppins">{{ rangeIlse }}%</p>
                     <input class="h-2" type="range" v-model="rangeIlse" id="rangeIlse">
-                    <span class="px-4 text-white font-semibold font-poppins bg-sky-700 rounded-full">Ilse</span>
+                    <span class="px-4 font-semibold text-white rounded-full font-poppins bg-sky-700">Ilse</span>
                     <img class="w-24 h-28" src="../assets/img/acoustic.png" alt="">
                 </div>
                 <!-- Isaac -->
                 <div class="flex flex-col items-center bg-white gap-3 p-4 bg-wh8te rounded-lg shadow-lg hover:scale-105 transition-transform ease-in hover:border-[1px] border-sky-700">
-                    <p class="bg-sky-800 rounded-lg text-white font-poppins font-semibold px-3">{{ rangeIsaac }}%</p>
+                    <p class="px-3 font-semibold text-white rounded-lg bg-sky-800 font-poppins">{{ rangeIsaac }}%</p>
                     <input class="h-2" type="range" v-model="rangeIsaac" id="rangeIsaac">
-                    <span class="px-4 text-white font-semibold font-poppins bg-sky-700 rounded-full">Isaac</span>
+                    <span class="px-4 font-semibold text-white rounded-full font-poppins bg-sky-700">Isaac</span>
                     <img class="w-20 h-20" src="../assets/img/electricG.png" alt="">
                 </div>
                 <!-- Ana -->
                 <div class="flex flex-col items-center bg-white gap-3 p-4 bg-wh8te rounded-lg shadow-lg hover:scale-105 transition-transform ease-in hover:border-[1px] border-sky-700">
-                    <p class="bg-sky-800 rounded-lg text-white font-poppins font-semibold px-3">{{ rangeAna }}%</p>
+                    <p class="px-3 font-semibold text-white rounded-lg bg-sky-800 font-poppins">{{ rangeAna }}%</p>
                     <input class="h-2" type="range" v-model="rangeAna" id="rangeAna">
-                    <span class="px-4 text-white font-semibold font-poppins bg-sky-700 rounded-full">Ana</span>
+                    <span class="px-4 font-semibold text-white rounded-full font-poppins bg-sky-700">Ana</span>
                     <img class="w-20 h-20" src="../assets/img/flautin.png" alt="">
                 </div>
                 <!-- Sara -->
                 <div class="flex flex-col items-center bg-white gap-3 p-4 bg-wh8te rounded-lg shadow-lg hover:scale-105 transition-transform ease-in hover:border-[1px] border-sky-700">
-                    <p class="bg-sky-800 rounded-lg text-white font-poppins font-semibold px-3">{{ rangeSara }}%</p>
+                    <p class="px-3 font-semibold text-white rounded-lg bg-sky-800 font-poppins">{{ rangeSara }}%</p>
                     <input class="h-2" type="range" v-model="rangeSara" id="rangeSara">
-                    <span class="px-4 text-white font-semibold font-poppins bg-sky-700 rounded-full">Sara</span>
+                    <span class="px-4 font-semibold text-white rounded-full font-poppins bg-sky-700">Sara</span>
                     <img class="w-20 h-20" src="../assets/img/chello.png" alt="">
                 </div>
                 <!-- Lucein -->
                 <div class="flex flex-col items-center bg-white gap-3 p-4 bg-wh8te rounded-lg shadow-lg hover:scale-105 transition-transform ease-in hover:border-[1px] border-sky-700">
-                    <p class="bg-sky-800 rounded-lg text-white font-poppins font-semibold px-3">{{ rangeLucein }}%</p>
+                    <p class="px-3 font-semibold text-white rounded-lg bg-sky-800 font-poppins">{{ rangeLucein }}%</p>
                     <input class="h-2" type="range" v-model="rangeLucein" id="rangeLucein">
-                    <span class="px-4 text-white font-semibold font-poppins bg-sky-700 rounded-full">Luzein</span>
+                    <span class="px-4 font-semibold text-white rounded-full font-poppins bg-sky-700">Luzein</span>
                     <img class="w-16 h-14" src="../assets/img/trompeta.png" alt="">
                 </div>
                 <!-- Paty -->
                 <div class="flex flex-col items-center bg-white gap-3 p-4 bg-wh8te rounded-lg shadow-lg hover:scale-105 transition-transform ease-in hover:border-[1px] border-sky-700">
-                    <p class="bg-sky-800 rounded-lg text-white font-poppins font-semibold px-3">{{ rangePaty }}%</p>
+                    <p class="px-3 font-semibold text-white rounded-lg bg-sky-800 font-poppins">{{ rangePaty }}%</p>
                     <input class="h-2" type="range" v-model="rangePaty" id="rangePaty">
-                    <span class="px-4 text-white font-semibold font-poppins bg-sky-700 rounded-full">Paty</span>
+                    <span class="px-4 font-semibold text-white rounded-full font-poppins bg-sky-700">Paty</span>
                     <img class="w-16 h-14" src="../assets/img/trompeta.png" alt="">
                 </div>
                 <!-- Isvy -->
                 <div class="flex flex-col items-center bg-white gap-3 p-4 bg-wh8te rounded-lg shadow-lg hover:scale-105 transition-transform ease-in hover:border-[1px] border-sky-700">
-                    <p class="bg-sky-800 rounded-lg text-white font-poppins font-semibold px-3">{{ rangeIsvy }}%</p>
+                    <p class="px-3 font-semibold text-white rounded-lg bg-sky-800 font-poppins">{{ rangeIsvy }}%</p>
                     <input class="h-2" type="range" v-model="rangeIsvy" id="rangeIsvy">
-                    <span class="px-4 text-white font-semibold font-poppins bg-sky-700 rounded-full">Isvy</span>
+                    <span class="px-4 font-semibold text-white rounded-full font-poppins bg-sky-700">Isvy</span>
                     <img class="w-10 h-10" src="../assets/img/microfono.png" alt="">
                 </div>
                 <!-- Ami -->
                 <div class="flex flex-col items-center bg-white gap-3 p-4 bg-wh8te rounded-lg shadow-lg hover:scale-105 transition-transform ease-in hover:border-[1px] border-sky-700">
-                    <p class="bg-sky-800 rounded-lg text-white font-poppins font-semibold px-3">{{ rangeAmi }}%</p>
+                    <p class="px-3 font-semibold text-white rounded-lg bg-sky-800 font-poppins">{{ rangeAmi }}%</p>
                     <input class="h-2" type="range" v-model="rangeAmi" id="rangeAmi">
-                    <span class="px-4 text-white font-semibold font-poppins bg-sky-700 rounded-full">Amy</span>
+                    <span class="px-4 font-semibold text-white rounded-full font-poppins bg-sky-700">Amy</span>
                     <img class="w-10 h-10" src="../assets/img/microfono.png" alt="">
                 </div>
                 <!-- Alma -->
                 <div class="flex flex-col items-center bg-white gap-3 p-4 bg-wh8te rounded-lg shadow-lg hover:scale-105 transition-transform ease-in hover:border-[1px] border-sky-700">
-                    <p class="bg-sky-800 rounded-lg text-white font-poppins font-semibold px-3">{{ rangeAlma }}%</p>
+                    <p class="px-3 font-semibold text-white rounded-lg bg-sky-800 font-poppins">{{ rangeAlma }}%</p>
                     <input class="h-2" type="range" v-model="rangeAlma" id="rangeAlma">
-                    <span class="px-4 text-white font-semibold font-poppins bg-sky-700 rounded-full">Alma</span>
+                    <span class="px-4 font-semibold text-white rounded-full font-poppins bg-sky-700">Alma</span>
                     <img class="w-10 h-10" src="../assets/img/microfono.png" alt="">
                 </div>
                 <!-- Ale/Agus -->
                 <div class="flex flex-col items-center bg-white gap-3 p-4 bg-wh8te rounded-lg shadow-lg hover:scale-105 transition-transform ease-in hover:border-[1px] border-sky-700">
-                    <p class="bg-sky-800 rounded-lg text-white font-poppins font-semibold px-3">{{ rangeAleAgus }}%</p>
+                    <p class="px-3 font-semibold text-white rounded-lg bg-sky-800 font-poppins">{{ rangeAleAgus }}%</p>
                     <input class="h-2" type="range" v-model="rangeAleAgus" id="rangeAleAgus">
-                    <span class="px-4 text-white font-semibold font-poppins bg-sky-700 rounded-full">Ale/Agus</span>
+                    <span class="px-4 font-semibold text-white rounded-full font-poppins bg-sky-700">Ale/Agus</span>
                     <img class="w-20 h-20" src="../assets/img/drums.png" alt="">
                 </div>
             </div>
-            <!-- <button @click="saveValues" class="p-2 text-xl text-wh8te rounded-lg bg-sky-700 hover:bg-sky-800 active:scale-95 font-poppins">Guardar</button> -->
+            <!-- <button @click="saveValues" class="p-2 text-xl rounded-lg text-wh8te bg-sky-700 hover:bg-sky-800 active:scale-95 font-poppins">Guardar</button> -->
 
-            <section class="bg-white p-6 m-2 rounded-lg shadow-lg w-full max-w-md font-poppins">
-        <h2 class="text-2xl font-medium mb-4">Nota nueva</h2>
+            <section class="w-full max-w-md p-6 m-2 bg-white rounded-lg shadow-lg font-poppins">
+        <h2 class="mb-4 text-2xl font-medium">Nota nueva</h2>
         <form>
             <div class="mb-4">
-                <label for="message" class="block text-gray-700 font-medium mb-2">Mensaje</label>
+                <label for="message" class="block mb-2 font-medium text-gray-700">Mensaje</label>
                 <textarea @keypress.enter="addNote" v-model="note" id="message" rows="4" class="w-full p-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky-500"></textarea>
             </div>
-            <button @click.prevent="addNote" type="submit" class="w-full bg-sky-800 text-white py-2 rounded-lg hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500">
+            <button @click.prevent="addNote" type="submit" class="w-full py-2 text-white rounded-lg bg-sky-500 hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500">
                 Enviar
             </button>
         </form>
-        <ButtonSave 
-    class="fixed bottom-3 right-5 bg-sky-700 text-white py-2 px-4 rounded-lg shadow-lg hover:bg-sky-800 focus:ring-2 focus:ring-sky-500 transition-transform active:scale-95"
-    @click="saveValues"
-/>
+
 
     </section>
+    <div>
+        <ButtonSave 
+        class="px-4 py-2 my-4 text-white transition-transform rounded-lg shadow-lg  bg-sky-700 hover:bg-sky-800 focus:ring-2 focus:ring-sky-500 active:scale-95"
+        @click="saveValues"
+    />
+    </div>
             </div>
         
     </section>
@@ -228,10 +232,11 @@ const showToastSuccess = () => {
 const notesRef = collection(db, 'notes');
 const addNote = async() => {
     try {
-        await addDoc(notesRef,{
+      const noteDoc =  await addDoc(notesRef,{
             note: note.value,
             date: Timestamp.fromDate(new Date())
         })
+        await updateDoc(noteDoc, {idDoc: noteDoc.id})
         toast("Nota Enviada", {
       "theme": "light",
       "type": "success",

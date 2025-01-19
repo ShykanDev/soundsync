@@ -9,8 +9,12 @@
         </RouterLink>
       </div>
     </div>
+    <!-- div to confirm close -->
+    <!-- <div class="fixed top-0 bottom-0 left-0 right-0 z-50 w-full bg-black"></div> -->
 
     <!-- Rotate your phone notice -->
+
+    <!-- <div class="fixed top-0 bottom-0 left-0 right-0 z-40 bg-black"></div> -->
     <div class="fixed top-0 bottom-0 left-0 right-0 z-40 backdrop-blur-sm portrait:block landscape:hidden min-h-dvh"></div>
     <div class="z-50 flex flex-col items-center justify-center landscape:hidden portrait:flex">
       <!-- <img src="../assets/mobile.gif" class="w-[160px] z-50" alt=""> -->
@@ -25,11 +29,11 @@
       <BarChart ref="barChart" class="min-h-56" :data="rangeValues" :key="chartKey"></BarChart>
     </section>
 
-    <h2 class="text-xl my-5 font-medium text-sky-950 font font-poppins ">Notas</h2>
-    <section v-if="notesArr" class="flex flex-wrap justify-center space-x-5 px-2 space-y-3 max-h-96 overflow-y-auto">
-      <NotificationCard v-for="note in notesArr.sort((a, b) => b.date - a.date)" :key="note" class="animate-fade-up " :class="{'border-[1px] border-sky-700 animate-shake animate-delay-500' : notesArr[0] == note}" :message="note.note" :date="note.date"/>
+    <h2 class="my-5 text-xl font-medium text-sky-950 font font-poppins ">Notas</h2>
+    <section v-if="notesArr" class="flex flex-wrap justify-center px-2 space-x-5 space-y-3 overflow-y-auto max-h-96">
+      <NotificationCard v-for="note in notesArr.sort((a, b) => b.date - a.date)" :key="note" class="animate-fade-up " :class="{'border-[1px] border-sky-700 animate-shake animate-delay-500' : notesArr[0] == note}" :message="note.note" :date="note.date" :doc-id="note.idDoc"/>
     </section>
-    <h3 class="font-poppins text-slate-600 text-sm">Las notas se eliminarán en 24 horas</h3>
+    <h3 class="text-sm font-poppins text-slate-600">Las notas se eliminarán en 24 horas</h3>
   </div>
 </template>
 
